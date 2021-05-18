@@ -79,6 +79,7 @@ const dinosJSON = {
     const grid = document.getElementById("grid")
 
     // function to shuffle an array
+    // modified with return from Fisher-Yates example https://stackoverflow.com/a/12646864/591666
     function shuffleArray(array) {
         let j
         for (let i = array.length - 1; i > 0; i--) {
@@ -88,9 +89,9 @@ const dinosJSON = {
         }
         return array
       }
-      
 
     // function to pull an item at random from an array
+    // modified with return from https://stackoverflow.com/a/4550514/591666
     function randomIdx(array){
         return array[Math.floor(Math.random() * array.length)]
     }
@@ -231,8 +232,8 @@ const dinosJSON = {
             gridItem.parentNode.appendChild(clone)
         }
 
-            // populate dino blocks
-            dinoTile(human,randomizedGrid())
+        // populate dino blocks
+        dinoTile(human,randomizedGrid())
 
         // populate human block
         const center = grid.getElementsByClassName("grid-item")[4]
